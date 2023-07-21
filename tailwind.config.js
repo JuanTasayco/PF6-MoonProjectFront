@@ -23,7 +23,7 @@ export const theme = {
     xl: "1200px",
     // => @media (min-width: 1280px) { ... }
 
-    "2xl": "1580px",
+    "2xl": "1650px",
     // => @media (min-width: 1536px) { ... }
   },
 
@@ -51,13 +51,15 @@ export const theme = {
     heading4: "32px",
     heading5: "28px",
     subheading1: "28px",
-    subheading2: "16px",
+    subheading2: "14px",
+    navText: "16px"
   },
 
   letterSpacing: {
     /* solo dice 4.75, no es exacto */
     heading5: "4.75px",
-    subheading2: "2.7px",
+    subheading2: "2.35px",
+    navText: "2.7px"
   },
 
   colors: {

@@ -1,4 +1,11 @@
-<div class="h-screen flex flex-col">
+<div
+  class="h-screen flex flex-col 
+  lg:bg-[url(assets/home/background-home-desktop.jpg)]
+  sm:bg-[url(assets/home/background-home-tablet.jpg)]
+  bg-[url(assets/home/background-home-mobile.jpg)]
+  "
+  
+>
   <!-- navbar -->
   <div class="">
     <app-nav-bar></app-nav-bar>
@@ -7,30 +14,25 @@
   <!-- contentHome -->
   <div class="grow flex flex-col lg:flex-row text-whiteMoon">
     <div
-      class="textHome flex-1 flex flex-col justify-center items-center"
-      style="border: 2px solid red"
+      class="textHome flex-1 flex flex-col justify-center items-center lg:pt-32"
     >
-      <h2 class="text-[1.2rem] sm:text-heading5 uppercase" style="border:2px solid red">
+      <h2
+        class="text-[1.2rem] sm:text-heading5 uppercase font-barlow tracking-heading5"
+      >
         So, you want to travel to
       </h2>
-      <h1 class="uppercase text-heading2 sm:text-heading1">space</h1>
-      <div style="border:2px solid green">
-        <p
-          class="text-center sm:mx-[32%] lg:mx-auto lg:text-start text-[20px] font-barlow"
-        >
-          Let’s face it; if you want to go to space, you might as well genuinely
-          go to outer space and not hover kind of on the edge of it. Well sit
-          back, and relax because we’ll give you a truly out of this world
-          experience!
-        </p>
-      </div>
+      <h1 class="uppercase text-heading2 sm:text-heading1 lg:ms-12">space</h1>
+
+      <p class="max-w-[430px] font-barlow lg:text-[1.3rem] lg:ms-12">
+        Let’s face it; if you want to go to space, you might as well genuinely
+        go to outer space and not hover kind of on the edge of it. Well sit
+        back, and relax because we’ll give you a truly out of this world
+        experience!
+      </p>
     </div>
-    <div
-      class="ButtonHome flex-1 flex justify-center items-center"
-      style="border: 2px solid green"
-    >
+    <div class="ButtonHome flex-1 flex justify-center items-center">
       <div
-        class="circle w-[50%] h-[50%] rounded-full bg-whiteMoon flex justify-center items-center"
+        class="circle w-[30%] h-[30%] rounded-full bg-whiteMoon flex justify-center items-center"
       >
         <h5 class="text-blackMoon uppercase">explore</h5>
       </div>
