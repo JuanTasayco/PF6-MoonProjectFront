@@ -25,10 +25,13 @@ export const theme = {
 
     "2xl": "1466px",
     // => @media (min-width: 1536px) { ... }
+
+    "3xl": "1850px",
+    // => @media (min-width: 1850px) { ... }
   },
 
   container: {
-    center: false,
+    center: true,
     padding: {
       DEFAULT: "2rem",
       sm: "2rem",
@@ -52,14 +55,14 @@ export const theme = {
     heading5: "28px",
     subheading1: "28px",
     subheading2: "14px",
-    navText: "16px"
+    navText: "16px",
   },
 
   letterSpacing: {
     /* solo dice 4.75, no es exacto */
     heading5: "4.75px",
     subheading2: "2.35px",
-    navText: "2.7px"
+    navText: "2.7px",
   },
 
   colors: {

@@ -8,6 +8,9 @@ import { DestinationComponent } from './pages/destination/destination.component'
 import { CrewComponent } from './pages/crew/crew.component';
 import { TechnologyComponent } from './pages/technology/technology.component';
 import { PrincipalPageComponent } from './pages/principal-page/principal-page.component';
+import { PlanetsComponent } from './components/planets/planets.component';
+import { PersonsComponent } from './components/persons/persons.component';
+import { TechnologiesComponent } from './components/technologies/technologies.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +20,9 @@ import { PrincipalPageComponent } from './pages/principal-page/principal-page.co
     CrewComponent,
     TechnologyComponent,
     PrincipalPageComponent,
+    PlanetsComponent,
+    PersonsComponent,
+    TechnologiesComponent,
   ],
   imports: [CommonModule, MoonRoutingModule],
 })
