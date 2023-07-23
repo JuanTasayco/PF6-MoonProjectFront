@@ -1,12 +1,9 @@
-<nav
-  class="text-whiteMoon font-barlow float-right lg:w-[64%] backdrop-blur-xl"
-  style="border: 2px solid red"
->
-  <div class="flex flex-wrap items-center justify-between p-4">
+<nav class="text-whiteMoon font-barlow  w-full ">
+  <div class="flex flex-wrap items-center justify-between p-4 float-right lg:float-none">
     <button
       data-collapse-toggle="navbar-dropdown "
       type="button"
-      class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg lg:hidden focus:outline-none focus:ring-2"
+      class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg sm:hidden focus:outline-none focus:ring-2"
       aria-controls="navbar-dropdown"
       aria-expanded="false"
     >
@@ -28,18 +25,19 @@
         />
       </svg>
     </button>
-    <div class="hidden w-full lg:block lg:w-auto" id="navbar-dropdown">
+    <div class="hidden w-full sm:block sm:w-auto" id="navbar-dropdown">
       <ul
-        class="uppercase flex flex-col font-medium p-4 md:p-0 mt-4 border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0"
-        style="border: 2px solid green"
+        class="uppercase flex flex-col font-medium p-4 sm:p-0 mt-4 border rounded-lg sm:flex-row sm:space-x-8 sm:mt-0 sm:border-0"
       >
-        <li class="flex-">
+        <li class="">
           <a
             href="#"
-            class="block py-2 pl-3 pr-4 rounded md:border-0 font-semibold tracking-navText"
+            class="block py-2 pl-3 pr-4 rounded sm:border-0 font-semibold tracking-navText"
             aria-current="page"
           >
-            <h5 class="font-extrabold text-[1.2rem] inline-block">01</h5>
+            <h5 class="font-extrabold text-[1.2rem] hidden lg:inline-block">
+              01
+            </h5>
             Home</a
           >
         </li>
@@ -48,7 +46,11 @@
           <a
             href="#"
             class="block py-2 pl-3 pr-4 rounded md:border-0 font-semibold tracking-navText"
-            ><h5 class="font-extrabold text-[1.2rem] inline-block mx-2">02</h5>
+            ><h5
+              class="font-extrabold text-[1.2rem] hidden lg:inline-block mx-2"
+            >
+              02
+            </h5>
             Services</a
           >
         </li>
@@ -56,7 +58,11 @@
           <a
             href="#"
             class="block py-2 pl-3 pr-4 rounded md:border-0 font-semibold tracking-navText"
-            ><h5 class="font-extrabold text-[1.2rem] inline-block mx-2">03</h5>
+            ><h5
+              class="font-extrabold text-[1.2rem] hidden lg:inline-block mx-2"
+            >
+              03
+            </h5>
             Pricing</a
           >
         </li>
@@ -64,7 +70,11 @@
           <a
             href="#"
             class="block py-2 pl-3 pr-4 rounded md:border-0 font-semibold tracking-navText"
-            ><h5 class="font-extrabold text-[1.2rem] inline-block mx-2">04</h5>
+            ><h5
+              class="font-extrabold text-[1.2rem] hidden lg:inline-block mx-2"
+            >
+              04
+            </h5>
             Contact</a
           >
         </li>

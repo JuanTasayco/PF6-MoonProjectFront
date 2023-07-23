@@ -23,7 +23,7 @@ export const theme = {
     xl: "1200px",
     // => @media (min-width: 1280px) { ... }
 
-    "2xl": "1650px",
+    "2xl": "1466px",
     // => @media (min-width: 1536px) { ... }
   },
 

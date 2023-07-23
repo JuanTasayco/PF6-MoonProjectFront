@@ -7,6 +7,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { DestinationComponent } from './pages/destination/destination.component';
 import { CrewComponent } from './pages/crew/crew.component';
 import { TechnologyComponent } from './pages/technology/technology.component';
+import { PrincipalPageComponent } from './pages/principal-page/principal-page.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { TechnologyComponent } from './pages/technology/technology.component';
     DestinationComponent,
     CrewComponent,
     TechnologyComponent,
+    PrincipalPageComponent,
   ],
   imports: [CommonModule, MoonRoutingModule],
 })
