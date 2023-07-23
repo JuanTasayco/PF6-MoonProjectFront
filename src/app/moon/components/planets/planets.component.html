@@ -1,1 +1,13 @@
-<p>planets works!</p>
+<div class="h-full flex flex-col lg:flex-row">
+  <div class="flex-1" style="border: 2px solid red">
+    <img src="" alt="" />
+  </div>
+  <div class="flex-1" style="border: 2px solid red">
+    <ul>
+      <li class="text-white" (click)="sendEvent($event)">Moon</li>
+      <li class="text-white" (click)="sendEvent($event)">Mars</li>
+      <li class="text-white" (click)="sendEvent($event)">Europe</li>
+      <li class="text-white" (click)="sendEvent($event)">Titan</li>
+    </ul>
+  </div>
+</div>
