@@ -10,47 +10,27 @@
     </a>
   </div>
 
-  <!-- header and button -->
-  <div
-    class="headerAndButton sm:h-[5rem] lg:h-auto lg:flex-1 lg:mt-5 lg:order-2 relative"
-  >
-    <div
-      class="sm:absolute right-0 lg:-left-[10rem] 2xl:w-full backdrop-blur-xl"
-    >
-      <app-nav-bar></app-nav-bar>
+  <!--  nav and content-->
+  <div class="grow flex flex-col mt-4">
+    <!-- header and button -->
+
+    <!-- navHeader -->
+    <div class="headerAndButton flex">
+      <div class="basis-[35%] hidden sm:flex flex-col">
+        <div class="flex-1"></div>
+        <div class="flex-1 border-t-2 border-whiteMoon/10"></div>
+      </div>
+
+      <!-- -->
+      <div class="flex-1 sm:backdrop-blur-3xl">
+        <app-nav-bar></app-nav-bar>
+      </div>
     </div>
-  </div>
 
-  <!-- text container-->
-  <div
-    class="text lg:flex-1 grow lg:order-1 flex lg:flex-col mx-auto xl:max-w-[40%]"
-    style="border: 2px solid green"
-  >
-    <div
-      class="hidden lg:block text-whiteMoon h-[5rem] border-b-[1px] border-whiteMoon/20"
-    ></div>
+    <!-- text container-->
 
-    <div class="grow" style="border: 2px solid yellow">
+    <div class="grow">
       <router-outlet></router-outlet>
     </div>
   </div>
 </div>
-
-<!-- contneido space -->
-<!--   <div
-      class="textHome flex-1 flex flex-col justify-center items-center lg:pt-32"
-    >
-      <h2
-        class="text-[1.2rem] sm:text-heading5 uppercase font-barlow tracking-heading5"
-      >
-        So, you want to travel to
-      </h2>
-      <h1 class="uppercase text-heading2 sm:text-heading1 lg:ms-12">space</h1>
-
-      <p class="max-w-[430px] font-barlow lg:text-[1.3rem] lg:ms-12">
-        Let’s face it; if you want to go to space, you might as well genuinely
-        go to outer space and not hover kind of on the edge of it. Well sit
-        back, and relax because we’ll give you a truly out of this world
-        experience!
-      </p>
-    </div> -->
