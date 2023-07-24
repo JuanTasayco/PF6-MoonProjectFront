@@ -1,13 +1,46 @@
 <div class="h-full flex flex-col lg:flex-row">
-  <div class="flex-1" style="border: 2px solid red">
-    <img src="" alt="" />
-  </div>
-  <div class="flex-1" style="border: 2px solid red">
-    <ul>
-      <li class="text-white" (click)="sendEvent($event)">Moon</li>
-      <li class="text-white" (click)="sendEvent($event)">Mars</li>
-      <li class="text-white" (click)="sendEvent($event)">Europe</li>
-      <li class="text-white" (click)="sendEvent($event)">Titan</li>
+  <!-- content planet -->
+  <section class="flex-1 flex items-center justify-center">
+    <img
+      *ngIf="currentPlanet"
+      [src]="currentPlanet.images.png"
+      style="border: 2px solid blue"
+      class="max-h-[20rem] lg:max-w-full lg:max-h-full"
+      alt=""
+    />
+  </section>
+
+  <!-- content descriptions and menu -->
+  <div class="flex-1 flex flex-col shrink" style="border: 2px solid red">
+    <!-- menu -->
+    <ul class="flex mx-auto flex-wrap">
+      <li
+        class="text-white mx-1 xs:mx-2 lg:mx-5 uppercase text-navText tracking-navText hover:cursor-pointer"
+        *ngFor="let planet of navPlanets"
+        (click)="sendEvent(planet.name)"
+        style="border: 2px solid green"
+      >
+        {{ planet.name }}
+      </li>
     </ul>
+
+    <!-- descriptions -->
+    <section
+      *ngIf="currentPlanet"
+      class="grow pt-3 flex flex-col justify-evenly text-center lg:text-start"
+      style="border: 2px solid yellow"
+    >
+      <h2 class="sm:text-heading2 text-[4rem] font-bellefair">
+        {{ currentPlanet.name | uppercase }}
+      </h2>
+      <p class="font-bellefair -tracking-[.5px] text-[1.2rem]">
+        {{ currentPlanet.description }}
+      </p>
+
+      <div class="flex">
+        <div class="flex-1">{{ currentPlanet.distance }}</div>
+        <div class="flex-1">{{ currentPlanet.travel }}</div>
+      </div>
+    </section>
   </div>
 </div>

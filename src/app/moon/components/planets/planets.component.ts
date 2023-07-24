@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { DataService } from '../../services/data.service';
+import { Destination } from '../../pages/interfaces/dataMoon.interfaces';
 
 @Component({
   selector: 'app-planets',
@@ -7,17 +8,18 @@ import { DataService } from '../../services/data.service';
   styleUrls: ['./planets.component.css'],
 })
 export class PlanetsComponent {
-  currentData: any = {};
+  @Input() currentPlanet!: any;
+
+  navPlanets = [
+    { name: 'Moon' },
+    { name: 'Mars' },
+    { name: 'Europa' },
+    { name: 'Titan' },
+  ];
 
   /* first go event, next get Data */
-  sendEvent(clickEvent: Event) {
-    this.dataService.setEvent = clickEvent;
-  }
-
-  getData() {
-    this.dataService.dataProject().subscribe((data) => {
-      console.log(data);
-    });
+  sendEvent(planet: string) {
+    this.dataService.setName = planet.toLowerCase();
   }
 
   constructor(private dataService: DataService) {}

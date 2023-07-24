@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
 import { Destination } from '../interfaces/dataMoon.interfaces';
+import { map, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-destination',
@@ -8,10 +9,24 @@ import { Destination } from '../interfaces/dataMoon.interfaces';
   styleUrls: ['./destination.component.css'],
 })
 export class DestinationComponent implements OnInit {
-  destinations: Array<Destination> = [];
+  planetFilter!: Destination;
 
   ngOnInit(): void {
-    this.dataService.dataProject().subscribe((data) => {});
+    this.dataService.getName
+      .pipe(
+        switchMap((name) =>
+          this.dataService
+            .getDestinations()
+            .pipe(
+              map((result) =>
+                result.filter((planets) => planets.name.toLowerCase() == name)
+              )
+            )
+        )
+      )
+      .subscribe((planet) => {
+        this.planetFilter = planet[0];
+      });
   }
 
   constructor(private dataService: DataService) {}
