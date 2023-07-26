@@ -1,7 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject, map } from 'rxjs';
-import { Destination, MoonData } from '../pages/interfaces/dataMoon.interfaces';
+import {
+  Crew,
+  Destination,
+  MoonData,
+  Technology,
+} from '../pages/interfaces/dataMoon.interfaces';
 
 @Injectable({
   providedIn: 'root',
@@ -26,6 +31,18 @@ export class DataService {
     return this.http
       .get<MoonData>('assets/data.json')
       .pipe(map((result) => result.destinations));
+  }
+
+  getCrew(): Observable<Crew[]> {
+    return this.http
+      .get<MoonData>('assets/data.json')
+      .pipe(map((result) => result.crew));
+  }
+
+  getTechnology(): Observable<Technology[]> {
+    return this.http
+      .get<MoonData>('assets/data.json')
+      .pipe(map((result) => result.technology));
   }
 
   constructor(private http: HttpClient) {}

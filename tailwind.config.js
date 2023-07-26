@@ -56,6 +56,7 @@ export const theme = {
     subheading1: "28px",
     subheading2: "14px",
     navText: "16px",
+    parrafo : '1.3rem'
   },
 
   letterSpacing: {
