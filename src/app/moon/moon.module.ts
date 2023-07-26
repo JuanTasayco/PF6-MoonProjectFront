@@ -11,6 +11,7 @@ import { PrincipalPageComponent } from './pages/principal-page/principal-page.co
 import { PlanetsComponent } from './components/planets/planets.component';
 import { PersonsComponent } from './components/persons/persons.component';
 import { TechnologiesComponent } from './components/technologies/technologies.component';
+import { CarrouselComponent } from './components/carrousel/carrousel.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { TechnologiesComponent } from './components/technologies/technologies.co
     PlanetsComponent,
     PersonsComponent,
     TechnologiesComponent,
+    CarrouselComponent,
   ],
   imports: [CommonModule, MoonRoutingModule],
 })
