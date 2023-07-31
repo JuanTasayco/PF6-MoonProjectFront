@@ -14,7 +14,14 @@
     Anterior
   </button> -->
 
-  <div class="bar-slider flex gap-3 absolute bottom-0 p-5">
+  <div
+    class="absolute bar-slider flex gap-3 top-[48%] 
+    sm:top-[40%] right-[50%] xl:left-0 xl:top-auto
+    translate-x-2/4 
+    xl:translate-x-0
+    xl:bottom-0 p-5"
+    #containerBar
+  >
     <div #barButton *ngFor="let hola of personsData" class="button-bar"></div>
   </div>
 </div>
