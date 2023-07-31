@@ -28,6 +28,10 @@ export class CarrouselComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     this.lengthContainers = this.elements.length;
     this.buttonsBar.first.nativeElement.classList.add('act');
+
+    setInterval(() => {
+      this.next();
+    }, 3000);
   }
 
   next() {
