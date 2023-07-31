@@ -1,6 +1,6 @@
 .personImg {
   object-fit: cover;
-  height: 100%;
+  border: 2px solid green;
 }
 
 .cont {

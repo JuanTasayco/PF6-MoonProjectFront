@@ -1,17 +1,13 @@
 <div class="slider h-full overflow-x-hidden">
   <!-- el se desplaza hacia la izquierda y topa primera imagen -->
-  <div
-    *ngIf="personsData"
-    class="slides flex w-[400%] h-full relative"
-    #containerSlides
-  >
+  <div *ngIf="personsData" class="slides flex w-[400%] h-full" #containerSlides>
     <div #element *ngFor="let person of personsData" class="w-full relative">
       <app-persons [activePerson]="person"></app-persons>
     </div>
   </div>
 
   <!-- si quisiera agregar botones mas adelante -->
-<!--   <button class="prev-btn absolute right-0 top-0 z-50" (click)="next()">
+  <!--   <button class="prev-btn absolute right-0 top-0 z-50" (click)="next()">
     Siguiente
   </button>
   <button class="next-btn absolute left-0 top-0 z-50" (click)="prev()">
