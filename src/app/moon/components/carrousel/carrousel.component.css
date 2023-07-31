@@ -1,11 +1,9 @@
 .slides {
-  border: 2px solid blue;
   box-sizing: border-box;
 }
 
 .slides-img {
   width: 100%;
-
   height: auto;
 }
 
@@ -28,5 +26,4 @@
 
 .act {
   opacity: 1;
-  background-color: red;
 }

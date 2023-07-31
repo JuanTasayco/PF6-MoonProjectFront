@@ -1,28 +1,23 @@
-<div
-  class="slider h-full relative overflow-x-hidden"
-  style="border: 2px solid yellow"
->
+<div class="slider h-full overflow-x-hidden">
   <!-- el se desplaza hacia la izquierda y topa primera imagen -->
-  <div class="slides flex w-[500%] h-full" #containerSlides>
-    <div #element class="element">1</div>
-    <div #element class="element">2</div>
-    <div #element class="element">3</div>
-    <div #element class="element">4</div>
-    <div #element class="element">5</div>
+  <div
+    *ngIf="personsData"
+    class="slides flex w-[400%] h-full relative"
+    #containerSlides
+  >
+    <div #element *ngFor="let person of personsData" class="w-full relative">
+      <app-persons [activePerson]="person"></app-persons>
+    </div>
   </div>
 
-  <button class="prev-btn absolute right-0 top-0" (click)="next()">
+  <button class="prev-btn absolute right-0 top-0 z-50" (click)="next()">
     Siguiente
   </button>
-  <button class="next-btn absolute left-0 top-0" (click)="prev()">
+  <button class="next-btn absolute left-0 top-0 z-50" (click)="prev()">
     Anterior
   </button>
 
   <div class="bar-slider flex gap-3 absolute bottom-0 p-5">
-    <div
-      #barButton
-      *ngFor="let hola of [1, 2, 3, 4, 5]"
-      class="button-bar"
-    ></div>
+    <div #barButton *ngFor="let hola of personsData" class="button-bar"></div>
   </div>
 </div>

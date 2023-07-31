@@ -2,6 +2,7 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
+  Input,
   OnInit,
   QueryList,
   ViewChild,
@@ -21,24 +22,18 @@ export class CarrouselComponent implements OnInit, AfterViewInit {
   @ViewChild('element') element!: ElementRef<HTMLElement>;
   @ViewChildren('barButton') buttonsBar!: QueryList<ElementRef>;
   private lengthContainers: number = 0;
-  crewData: Crew[] = [];
+  @Input('persons') personsData: Crew[] = [];
   currentSlide: number = 0;
-
+  ngOnInit(): void {}
   ngAfterViewInit(): void {
     this.lengthContainers = this.elements.length;
-  }
-  ngOnInit(): void {
-    this.dataService.getCrew().subscribe((result) => {
-      this.crewData = result;
-      console.log(this.crewData);
-    });
+    this.buttonsBar.first.nativeElement.classList.add('act');
   }
 
   next() {
     this.currentSlide =
       (this.currentSlide + 1 + this.lengthContainers) % this.lengthContainers;
     this.moveContainerWithGsap(this.currentSlide);
-
     this.activeColorBarSlide();
   }
 
@@ -50,6 +45,10 @@ export class CarrouselComponent implements OnInit, AfterViewInit {
   }
 
   moveContainerWithGsap(posSlide: number) {
+    if (posSlide == this.lengthContainers - 1) {
+      console.log('soy igualito czmare');
+    }
+
     gsap.to(this.slides.nativeElement, {
       x: -posSlide * this.element.nativeElement.clientWidth,
       duration: 0.7,

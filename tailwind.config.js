@@ -26,7 +26,7 @@ export const theme = {
     "2xl": "1466px",
     // => @media (min-width: 1536px) { ... }
 
-    "3xl": "1850px",
+    "3xl": "2000px",
     // => @media (min-width: 1850px) { ... }
   },
 
