@@ -1,1 +1,40 @@
-<p>technologies works!</p>
+<div class="h-full flex flex-col xl:flex-row">
+  <div class="flex-1 relative xl:order-2">
+    <img
+      [src]="currentBackground"
+      alt=""
+      class="object-fill xl:object-scale-down absolute h-full inset-0 w-full xl:w-auto"
+    />
+  </div>
+  <div
+    class="basis-[60%] xl:basis-[65%] flex flex-col xl:flex-row items-center xl:order-1"
+  >
+    <div class="buttons flex xl:flex-col gap-3 px-5 my-5">
+      <div
+        #buttons
+        *ngFor="let button of [1, 2, 3]; let i = index"
+        class="butt bg-blackMoon hover:cursor-pointer"
+        (click)="pressButton(i)"
+      >
+        <div>{{ i + 1 }}</div>
+      </div>
+    </div>
+    <!--  w-[3.5rem] h-[3.5rem] xl:w-[5rem] xl:h-[5rem] my-2 -->
+    <div
+      class="content-text xl:px-[3rem] gap-3 mb-5 flex flex-col items-center xl:items-start"
+      *ngIf="currentTechnology"
+    >
+      <h5 class="uppercase opacity-50">{{ "the therminology ..." }}</h5>
+      <h2
+        class="text-[2rem] xl:text-heading3 uppercase text-center xl:text-start inline-block"
+      >
+        {{ currentTechnology.name }}
+      </h2>
+      <p
+        class="font-barlow px-10 sm:px-0 sm:max-w-[50%] xl:max-w-[70%] text-center xl:text-start xl:w-full"
+      >
+        {{ currentTechnology.description }}
+      </p>
+    </div>
+  </div>
+</div>

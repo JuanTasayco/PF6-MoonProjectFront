@@ -50,7 +50,6 @@ export class CarrouselComponent implements OnInit, AfterViewInit {
 
   moveContainerWithGsap(posSlide: number) {
     if (posSlide == this.lengthContainers - 1) {
-      console.log('soy igualito czmare');
     }
 
     gsap.to(this.slides.nativeElement, {

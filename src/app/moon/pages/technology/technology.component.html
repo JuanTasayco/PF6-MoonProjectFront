@@ -1,1 +1,12 @@
-<div class="" style="border: 2px solid green">asdas</div>
+<div class="h-full flex flex-col relative">
+  <h2
+    class="basis-[3rem] sm:px-10 xl:px-0 sm:basis-[5rem] text-[1.2rem] xl:text-heading5 uppercase font-barlow tracking-heading5 text-center sm:text-start"
+  >
+    03 Space Launch 101
+  </h2>
+  <div class="content-technology grow relative">
+    <ng-container *ngIf="technologyData.length > 0">
+      <app-technologies [technologies]="technologyData"></app-technologies>
+    </ng-container>
+  </div>
+</div>
