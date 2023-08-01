@@ -1,20 +1,21 @@
 <div class="h-full flex flex-col lg:flex-row">
   <!-- content planet -->
-  <section class="md:flex-1 flex items-center justify-center">
+  <section class="flex-1 flex items-center justify-center relative">
+    <!-- max-h-[10rem] sm:max-h-[20rem] lg:max-w-full lg:max-h-full lg:mb-[7rem] -->
     <img
       *ngIf="currentPlanet"
       [src]="currentPlanet.images.png"
-      class="max-h-[10rem] sm:max-h-[20rem] lg:max-w-full lg:max-h-full lg:mb-[7rem]"
+      class="absolute max-w-full max-h-full"
       alt=""
     />
   </section>
 
   <!-- content descriptions and menu -->
-  <div class="flex-1 flex flex-col shrink lg:mt-12 mt-5">
+  <div class="flex-1 flex flex-col justify-center items-center lg:items-start">
     <!-- menu -->
-    <ul class="flex mx-auto lg:mx-0 flex-wrap">
+    <ul class="xl:basis-[3rem] flex mx-auto gap-4 lg:mx-0 flex-wrap">
       <li
-        class="text-white mx-1 xs:mx-2 lg:mx-3 uppercase text-navText tracking-navText hover:cursor-pointer"
+        class="text-white uppercase text-[navText] tracking-navText hover:cursor-pointer"
         *ngFor="let planet of navPlanets"
         (click)="sendEvent(planet.name)"
       >
@@ -22,36 +23,31 @@
       </li>
     </ul>
     <!-- descriptions -->
-    <section
-      *ngIf="currentPlanet"
-      class="grow text-center lg:text-start mx-auto w-full p-5 flex flex-col"
+    <div
+      class="xl:mb-10 text-center lg:text-start border-b-[1px] border-whiteMoon/20 mx-8 pb-10 xl:mx-0"
     >
-      <!--  -->
-      <div class="flex-1">
-        <h2 class="lg:text-heading2 sm:text-[5rem] text-[4rem] font-bellefair">
-          {{ currentPlanet.name | uppercase }}
-        </h2>
-        <p
-          class="sm:max-w-[35rem] lg:max-w-[26rem] font-barlow -tracking-[.5px] mx-auto lg:m-0 lg:text-parrafo mb-[3.5rem]"
-        >
-          {{ currentPlanet.description }}
-        </p>
-      </div>
-
-      <!-- box stadistics -->
-      <div
-        class="flex-1 flex flex-col sm:flex-row lg:items-start border-t-[1px] border-whiteMoon/20 uppercase"
+      <h2 class="lg:text-heading2 sm:text-[5rem] text-[3rem] font-bellefair">
+        {{ currentPlanet.name | uppercase }}
+      </h2>
+      <p
+        class="sm:max-w-[35rem] lg:max-w-[26rem] font-barlow -tracking-[.5px] mx-auto lg:m-0 lg:text-parrafo"
       >
-        <div class="flex-1 flex flex-col mt-8">
-          <h5 class="text-subheading2">{{ "avg. distance" | uppercase }}</h5>
-          <h5 class="text-subheading1">{{ currentPlanet.distance }}</h5>
-        </div>
-        <div class="flex-1 flex flex-col mt-8">
-          <h5 class="text-subheading2">{{ "est. travel time" | uppercase }}</h5>
-          <h5 class="text-subheading1">{{ currentPlanet.travel }}</h5>
-        </div>
+        {{ currentPlanet.description }}
+      </p>
+    </div>
+    <!-- box stadistics -->
+    <div
+      class="flex flex-col sm:gap-5 sm:flex-row w-auto lg:items-start uppercase text-center xl:text-start"
+    >
+      <div class="flex-2 flex flex-col mt-8">
+        <h5 class="text-subheading2">{{ "avg. distance" | uppercase }}</h5>
+        <h5 class="text-h5 text-subheading1">{{ currentPlanet.distance }}</h5>
       </div>
-      <!--  -->
-    </section>
+      <div class="flex-1 flex flex-col mt-8">
+        <h5 class="text-subheading2">{{ "est. travel time" | uppercase }}</h5>
+        <h5 class="text-h5 text-subheading1">{{ currentPlanet.travel }}</h5>
+      </div>
+    </div>
+    <!--  -->
   </div>
 </div>

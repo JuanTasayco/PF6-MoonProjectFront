@@ -44,7 +44,8 @@ export class TechnologiesComponent implements OnInit, AfterViewInit {
     });
   }
 
-  /* changeBackground */
+  /* changeImages */
+  /* la imagen cambia al hacer resize < 1200px o cuando le doy click al boton */
   @HostListener('window:resize', [])
   detectWindowSize() {
     this.changeImg();
