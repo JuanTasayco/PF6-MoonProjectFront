@@ -24,7 +24,6 @@ export class TechnologiesComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.currentTechnology = this.technologies[0];
-    console.log(this.currentTechnology);
   }
 
   ngAfterViewInit(): void {
@@ -54,7 +53,6 @@ export class TechnologiesComponent implements OnInit, AfterViewInit {
   currentBackground: string =
     'assets/technology/image-launch-vehicle-portrait.jpg';
   changeImg() {
-    console.log(this.currentBackground);
     this.currentBackground =
       window.innerWidth <= 1200
         ? this.currentTechnology?.images.landscape ?? ''

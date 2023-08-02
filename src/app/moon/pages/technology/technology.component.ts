@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
 import { Technology } from '../interfaces/dataMoon.interfaces';
+import { BackGroundService } from '../../services/background.service';
 
 @Component({
   selector: 'app-tecnology',
@@ -13,6 +14,11 @@ export class TechnologyComponent implements OnInit {
     this.dataService.getTechnology().subscribe((data) => {
       this.technologyData = data;
     });
+
+    this.backgroundService.emitNameComponent = 'technology';
   }
-  constructor(private dataService: DataService) {}
+  constructor(
+    private dataService: DataService,
+    private backgroundService: BackGroundService
+  ) {}
 }

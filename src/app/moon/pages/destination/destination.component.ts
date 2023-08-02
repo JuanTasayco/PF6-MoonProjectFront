@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
 import { Destination } from '../interfaces/dataMoon.interfaces';
 import { map, switchMap } from 'rxjs';
+import { BackGroundService } from '../../services/background.service';
 
 @Component({
   selector: 'app-destination',
@@ -27,7 +28,12 @@ export class DestinationComponent implements OnInit {
       .subscribe((planet) => {
         this.planetFilter = planet[0];
       });
+
+    this.backgroundService.emitNameComponent = 'destination';
   }
 
-  constructor(private dataService: DataService) {}
+  constructor(
+    private dataService: DataService,
+    private backgroundService: BackGroundService
+  ) {}
 }
