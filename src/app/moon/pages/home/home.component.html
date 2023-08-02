@@ -1,6 +1,6 @@
 <div
   class="Home h-screen box-content flex flex-col lg:flex-row bg-cover text-whiteMoon"
-  style="background-image: url('{{ pathBackground }}')"
+  [ngStyle]="{ 'background-image': 'url(' + pathBackground + ')' }"
 >
   <!-- logo container -->
   <!-- -->
