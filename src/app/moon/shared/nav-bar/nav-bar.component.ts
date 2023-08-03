@@ -19,11 +19,14 @@ export class NavBarComponent implements AfterViewInit, OnInit {
 
   count: number = 0;
   ngAfterViewInit(): void {
-    gsap.set(this.navBarEl.nativeElement, {
-      opacity: 0,
-      duration: 1,
-      xPercent: 100,
-    });
+    /* lo hago para evitar que al iniciar la vista en mobile, el navBar (con opacity 0) sobreponga la pagina y no se pueda seleccionar el texto o la animación del globo, esto se puede adornar con display:none también */
+    if (window.innerWidth <= 640) {
+      gsap.set(this.navBarEl.nativeElement, {
+        opacity: 0,
+        duration: 1,
+        xPercent: 100,
+      });
+    }
   }
 
   closeNavBar() {
@@ -58,7 +61,7 @@ export class NavBarComponent implements AfterViewInit, OnInit {
         clearProps: 'xPercent opacity',
       });
     } else {
-   /*    gsap.to(this.navBarEl.nativeElement, {
+      /*    gsap.to(this.navBarEl.nativeElement, {
         opacity: 0,
       }); */
       this.btnOpen.nativeElement.classList.remove('z-[100]');
