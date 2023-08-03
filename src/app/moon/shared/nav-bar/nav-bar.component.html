@@ -3,6 +3,7 @@
     class="flex flex-wrap items-center justify-between p-4 float-right lg:float-none overflow-y-hidden"
   >
     <button
+      (click)="openNavBar()"
       data-collapse-toggle="navbar-dropdown "
       type="button"
       class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg sm:hidden focus:outline-none focus:ring-2"
@@ -12,7 +13,7 @@
       <span class="sr-only">Open main menu</span>
       <!-- hamburguer menu -->
       <svg
-        class="w-10 h-10 fill-whiteMoon"
+        class="w-10 h-10 fill-whiteMoon z-50"
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 17 14"
@@ -29,11 +30,13 @@
     </button>
     <div class="w-full sm:block sm:w-auto overflow-hidden" id="navbar-dropdown">
       <ul
-        class="fixed h-full gap-5 p-10 sm:gap-0 w-[70%] backdrop-blur-lg z-50 right-0 top-0 sm:w-auto sm:relative uppercase flex flex-col font-medium  sm:p-0 sm:mt-4 border rounded-lg sm:flex-row sm:space-x-8 sm:border-0"
+        #navBarEl
+        class="fixed h-full gap-5 p-10 sm:gap-0 w-[70%] backdrop-blur-lg z-50 right-0 top-0 sm:w-auto sm:relative uppercase flex flex-col font-medium sm:p-0 sm:mt-4 border rounded-lg sm:flex-row sm:space-x-8 sm:border-0"
       >
         <!-- icon -->
         <svg
-          class="relative self-end sm:hidden px-2 mt-4"
+          (click)="closeNavBar()"
+          class="relative self-end sm:hidden px-2 mt-4 hover:cursor-pointer"
           xmlns="http://www.w3.org/2000/svg"
           height="1em"
           viewBox="0 0 384 512"
@@ -43,7 +46,6 @@
             d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"
           />
         </svg>
-
         <!-- final icon -->
 
         <li class="flex items-center">
