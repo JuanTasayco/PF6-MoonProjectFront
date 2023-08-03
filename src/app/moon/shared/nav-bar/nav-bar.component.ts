@@ -3,6 +3,7 @@ import {
   Component,
   ElementRef,
   HostListener,
+  OnInit,
   ViewChild,
 } from '@angular/core';
 import { gsap } from 'gsap';
@@ -11,7 +12,7 @@ import { gsap } from 'gsap';
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.css'],
 })
-export class NavBarComponent implements AfterViewInit {
+export class NavBarComponent implements AfterViewInit, OnInit {
   /* close navBar menu */
   @ViewChild('navBarEl') navBarEl!: ElementRef<HTMLElement>;
   @ViewChild('buttonOpen') btnOpen!: ElementRef<HTMLElement>;
@@ -22,7 +23,7 @@ export class NavBarComponent implements AfterViewInit {
     gsap.to(this.navBarEl.nativeElement, {
       opacity: 0,
       duration: 1,
-      xPercent: 100,
+      xPercent: 70,
     });
   }
   openNavBar() {
@@ -42,13 +43,20 @@ export class NavBarComponent implements AfterViewInit {
 
   @HostListener('window:resize', [])
   widthVw() {
-    console.log(window.innerWidth);
-    if (window.innerWidth < 640) {
-      /*  this.navBarEl.nativeElement.classList.add('ocultar'); */
+    if (window.innerWidth >= 640) {
+      gsap.to(this.navBarEl.nativeElement, {
+        opacity: 1,
+        xPercent: '0',
+        clearProps: 'xPercent opacity',
+      });
     } else {
-      /*   this.navBarEl.nativeElement.classList.remove('ocultar'); */
+      gsap.to(this.navBarEl.nativeElement, {
+        opacity: 0,
+      });
+      this.btnOpen.nativeElement.classList.add('z-[100]');
     }
   }
 
   constructor() {}
+  ngOnInit(): void {}
 }
