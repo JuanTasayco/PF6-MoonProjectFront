@@ -3,10 +3,11 @@
     class="flex flex-wrap items-center justify-between p-4 float-right lg:float-none overflow-y-hidden"
   >
     <button
+      #buttonOpen
       (click)="openNavBar()"
       data-collapse-toggle="navbar-dropdown "
       type="button"
-      class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg sm:hidden focus:outline-none focus:ring-2"
+      class="inline-flex z-[100] items-center p-2 w-10 h-10 justify-center text-sm rounded-lg sm:hidden focus:outline-none focus:ring-2"
       aria-controls="navbar-dropdown"
       aria-expanded="false"
     >
@@ -31,7 +32,7 @@
     <div class="w-full sm:block sm:w-auto overflow-hidden" id="navbar-dropdown">
       <ul
         #navBarEl
-        class="fixed h-full gap-5 p-10 sm:gap-0 w-[70%] backdrop-blur-lg z-50 right-0 top-0 sm:w-auto sm:relative uppercase flex flex-col font-medium sm:p-0 sm:mt-4 border rounded-lg sm:flex-row sm:space-x-8 sm:border-0"
+        class="fixed ocultar border-none h-full gap-5 p-10 sm:gap-0 min-w-[70%] backdrop-blur-lg z-50 right-0 top-0 sm:w-auto sm:relative uppercase flex flex-col font-medium sm:p-0 sm:mt-4 border rounded-lg sm:flex-row sm:space-x-8 sm:border-0"
       >
         <!-- icon -->
         <svg

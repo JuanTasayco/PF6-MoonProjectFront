@@ -1,3 +1,5 @@
-.navBar {
-  transform: translateX(100%);
+@media (max-width: 639.5px) {
+  .ocultar {
+    opacity: 0;
+  }
 }
