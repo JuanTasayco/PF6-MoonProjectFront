@@ -61,9 +61,6 @@ export class NavBarComponent implements AfterViewInit, OnInit {
         clearProps: 'xPercent opacity',
       });
     } else {
-      /*    gsap.to(this.navBarEl.nativeElement, {
-        opacity: 0,
-      }); */
       this.btnOpen.nativeElement.classList.remove('z-[100]');
     }
   }
