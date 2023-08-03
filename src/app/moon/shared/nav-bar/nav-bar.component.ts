@@ -16,14 +16,22 @@ export class NavBarComponent implements AfterViewInit, OnInit {
   /* close navBar menu */
   @ViewChild('navBarEl') navBarEl!: ElementRef<HTMLElement>;
   @ViewChild('buttonOpen') btnOpen!: ElementRef<HTMLElement>;
-  ngAfterViewInit(): void {}
+
+  count: number = 0;
+  ngAfterViewInit(): void {
+    gsap.set(this.navBarEl.nativeElement, {
+      opacity: 0,
+      duration: 1,
+      xPercent: 100,
+    });
+  }
 
   closeNavBar() {
     this.btnOpen.nativeElement.classList.add('z-[100]');
     gsap.to(this.navBarEl.nativeElement, {
       opacity: 0,
       duration: 1,
-      xPercent: 70,
+      xPercent: 90,
     });
   }
   openNavBar() {
@@ -50,10 +58,10 @@ export class NavBarComponent implements AfterViewInit, OnInit {
         clearProps: 'xPercent opacity',
       });
     } else {
-      gsap.to(this.navBarEl.nativeElement, {
+   /*    gsap.to(this.navBarEl.nativeElement, {
         opacity: 0,
-      });
-      this.btnOpen.nativeElement.classList.add('z-[100]');
+      }); */
+      this.btnOpen.nativeElement.classList.remove('z-[100]');
     }
   }
 
