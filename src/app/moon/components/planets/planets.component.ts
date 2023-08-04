@@ -46,7 +46,7 @@ export class PlanetsComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     setTimeout(() => {
       this.planetsLi.first.nativeElement.classList.add('planetActive');
-    }, 10);
+    }, 100);
   }
   constructor(
     private dataService: DataService,
