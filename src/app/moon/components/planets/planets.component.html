@@ -16,9 +16,12 @@
     class="flex-1 flex flex-col justify-center items-center lg:items-start"
   >
     <!-- menu -->
-    <ul class="xl:basis-[3rem] flex mx-auto gap-4 lg:mx-0 flex-wrap">
+    <ul
+      class="xl:basis-[3rem] flex mx-auto gap-4 lg:mx-0 flex-wrap items-center"
+    >
       <li
-        class="text-white uppercase text-[navText] tracking-navText hover:cursor-pointer"
+        #planetsLi
+        class="text-white pb-2 uppercase text-[navText] tracking-navText hover:cursor-pointer"
         *ngFor="let planet of navPlanets"
         (click)="sendEvent(planet.name)"
       >

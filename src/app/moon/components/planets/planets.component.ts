@@ -1,4 +1,12 @@
-import { Component, Input } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  Input,
+  QueryList,
+  ViewChildren,
+} from '@angular/core';
 import { DataService } from '../../services/data.service';
 import { Destination } from '../../pages/interfaces/dataMoon.interfaces';
 
@@ -7,8 +15,9 @@ import { Destination } from '../../pages/interfaces/dataMoon.interfaces';
   templateUrl: './planets.component.html',
   styleUrls: ['./planets.component.css'],
 })
-export class PlanetsComponent {
-  @Input() currentPlanet!: any;
+export class PlanetsComponent implements AfterViewInit {
+  @Input() currentPlanet!: Destination;
+  @ViewChildren('planetsLi') planetsLi!: QueryList<ElementRef>;
 
   navPlanets = [
     { name: 'Moon' },
@@ -19,8 +28,28 @@ export class PlanetsComponent {
 
   /* first go event, next get Data */
   sendEvent(planet: string) {
+    this.planetsLi.forEach((planetLi, index, arreglo) => {
+      /* validacion para obtener la referencia correcta gracias al texto incluido */
+      if (
+        planetLi.nativeElement.innerText.toLowerCase() == planet.toLowerCase()
+      ) {
+        /* tomo el arreglo para borrar a las demás la clase planetActive en caso la tengan */
+        arreglo.forEach((allPlanets) =>
+          allPlanets.nativeElement.classList.remove('planetActive')
+        );
+        /* agrego la clase al elemento que corresponde */
+        planetLi.nativeElement.classList.add('planetActive');
+      }
+    });
     this.dataService.setName = planet.toLowerCase();
   }
-
-  constructor(private dataService: DataService) {}
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      this.planetsLi.first.nativeElement.classList.add('planetActive');
+    }, 10);
+  }
+  constructor(
+    private dataService: DataService,
+    private cdr: ChangeDetectorRef
+  ) {}
 }
