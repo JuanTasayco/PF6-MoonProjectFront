@@ -13,11 +13,11 @@
   <!-- content descriptions and menu -->
   <section
     *ngIf="currentPlanet"
-    class="flex-1 flex flex-col justify-center items-center lg:items-start"
+    class="flex-1 shrink-0 flex flex-col justify-center items-center lg:items-start my-auto"
   >
     <!-- menu -->
     <ul
-      class="xl:basis-[3rem] shrink-0 flex mx-auto gap-4 lg:mx-0 flex-wrap items-center"
+      class="xl:basis-[3rem] flex mx-auto gap-4 lg:mx-0 flex-wrap items-center"
     >
       <li
         #planetsLi
@@ -30,7 +30,7 @@
     </ul>
     <!-- descriptions -->
     <div
-      class="flex-1 xl:mb-10 text-center lg:text-start border-b-[1px] border-whiteMoon/20 mx-8 pb-10 xl:mx-0"
+      class="flex-none xl:h-[400px] xl:mb-10 text-center lg:text-start border-b-[1px] border-whiteMoon/20 mx-8 pb-10 xl:mx-0"
     >
       <h2 class="lg:text-heading2 sm:text-[5rem] text-[3rem] font-bellefair">
         {{ currentPlanet.name | uppercase }}
@@ -43,7 +43,7 @@
     </div>
     <!-- box stadistics -->
     <div
-      class="flex-1 flex shrink-0 flex-col sm:gap-5 sm:flex-row w-auto lg:items-start uppercase text-center xl:text-start"
+      class="flex-none flex flex-col sm:gap-5 sm:flex-row w-auto lg:items-start uppercase text-center xl:text-start"
     >
       <div class="flex-2 flex flex-col mt-8">
         <h5 class="text-subheading2">{{ "avg. distance" | uppercase }}</h5>
